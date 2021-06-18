@@ -34,13 +34,13 @@ mongoose
     
   
  
-  MongoClient.connect("mongodb+srv://amakien_team:FuWVJj1psE1l4i8x@telltail.3wrhr.mongodb.net/",
+  MongoClient.connect("", //paste your mongoDB URL
   {
     useUnifiedTopology: true,
      useNewUrlParser: true,
   
   }).then((client) => {
-    const connect = client.db("sensordata")
+    const connect = client.db("") // Enter your database name here
     console.log('sdds')
     setInterval ( async  function   () {
    
