@@ -259,7 +259,7 @@ The JSON data can be posted to http also but since this is not secure we used ht
 
 
 
-###  3.2  Web UI screen walk-through (Source: Airjaldi Telltale. Note: this URL will be replaced shortly with a Production environment – at the following URL: ajtelltale.com, expected launch by June 22)
+###   Web UI screen walk-through (Source: Airjaldi Telltale. Note: this URL will be replaced shortly with a Production environment – at the following URL: ajtelltale.com, expected launch by June 22)
 ##             
                                 Figure 13: Web Login Page 
 
@@ -344,6 +344,3 @@ The JSON data can be posted to http also but since this is not secure we used ht
 # APK (Android Application Package) 
     In addition to the Web UI (computer and mobile) we have also developed an APK version, which provides the user with a stripped version of the UI, containing only alerts. 
 
-# 4. Objective4: Measure and report on the cost-saving and improved uptime impact of the project
-    As the system has been in operation for a short period, information on these indicators (also 
-    mentioned in the “Project Evaluation” section) could not be provided at present. We expected to be able to report our findings here within 3-4 months. 
