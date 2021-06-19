@@ -10,7 +10,7 @@
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-1-Image-1.jpg "Board1")
 
 # Power Supply
-    Power Supply: Arduino can be powered on with a USB, 5V or 2.3V power supply. Since we have at least one 12V battery in all locations we used 12V to 5/3.3V step-down converter, with a form-factor that is small enough and readily available in market. 
+    Arduino can be powered on with a USB, 5V or 2.3V power supply. Since we have at least one 12V battery in all locations we used 12V to 5/3.3V step-down converter, with a form-factor that is small enough and readily available in market. 
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623994399/airjaldi/github/arudrino/thumbnail_aud_img.jpg "Power Supply")
                 
@@ -19,21 +19,15 @@
 
 # Voltage Sensor
         Arduinos have built-in voltage sensor which can measure voltages between 0-5 or 3.3 volts (depending upon the type). For reading voltages more that 0-5 or 0-3.3 we will have to make a voltage divider. There are various voltage dividers available in market but readily available one can measure voltage up to 25 volts. We need to measure voltage up to 60 volts or more so made our own. 
-
-        Voltage divider formula2: 
-        Where: 
-        Vout = output voltage Vin = source voltage R1 = first resistor 
         
         V(out) = V(input)xR2/(R1+R2)
 
 #
-        Figure 3: Scheme of Voltage Divider circuit
+        Figure 3: Schematic of Voltage Divider circuit
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992935/airjaldi/github/arudrino/Page-3-Image-2.jpg "Voltage Divider Circuit")
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1624001959/airjaldi/github/arudrino/diagram.jpg "Voltage Divider Circuit 2")
          
-         Figure 4. Voltage divider
-         schematic (using Arduino)
 
 # PCB (Printed Circuit Board) 
     for the circuit we used a We used prototype PCB, which has pre-drilled holes and can be easily cut to desired size.
