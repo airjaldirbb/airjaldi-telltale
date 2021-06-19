@@ -4,31 +4,27 @@
 
 # Measuring voltage using Arduino 
 
-Board
+# Board
     Our search for an Arduino device that can connect to a voltage sensor and be able to send measurements to a remote database led us to the Arduino Wemos D1 R2 (picture below). We chose this specific board because it comes with built-in WiFi module and its form factor is large enough to accommodate a voltage divider and power supply. 
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-1-Image-1.jpg "Board1")
 
-Power Supply
+# Power Supply
     Power Supply: Arduino can be powered on with a USB, 5V or 2.3V power supply. Since we have at least one 12V battery in all locations we used 12V to 5/3.3V step-down converter, with a form-factor that is small enough and readily available in market. 
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623994399/airjaldi/github/arudrino/thumbnail_aud_img.jpg "Power Supply")
                 
-                AC to 12 volt Power Supply
+                12 to 5 volts power supply
 
 
-Voltage Sensor
+# Voltage Sensor
         Arduinos have built-in voltage sensor which can measure voltages between 0-5 or 3.3 volts (depending upon the type). For reading voltages more that 0-5 or 0-3.3 we will have to make a voltage divider. There are various voltage dividers available in market but readily available one can measure voltage up to 25 volts. We need to measure voltage up to 60 volts or more so made our own. 
 
         Voltage divider formula2: 
         Where: 
         Vout = output voltage Vin = source voltage R1 = first resistor 
         
-        R2 = second resistor 
-        ..................Column Break................𝑉𝑖𝑛 𝑋 𝑅2 
-
-        𝑉𝑜𝑢𝑡 = 𝑅1 + 𝑅2 
-
+        V(out) = V(input)xR2/(R1+R2)
 
 #
         Figure 3: Scheme of Voltage Divider circuit
