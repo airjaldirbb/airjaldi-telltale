@@ -196,16 +196,8 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 
 #
-# 1.4 Factor Calculation 
-    For our demo we used R1: 10kΩ and R2: 2.2 kΩ (see image 8). Since a resistor value has variance of 5-10% it is advisable to measure the actual value using a multimeter. Actual resistor’s value for the above R1 and R2 were 9.85kΩ and 2.15kΩ respectively. Using the voltage divider calculator for output voltage of 3.3V we have an input voltage 18.41V. Hence, for the given R1 and R2 we can use these devises to sense voltages of up to 18.41V. 
-
-    
-        ..................Column Break..................𝑉𝑖𝑛 𝑋 2.15 
-        3.3=9.85 + 2.15 
-        𝑉𝑖𝑛 = 18.41 
-        
-        (𝑚𝑎𝑥𝑖𝑚𝑢𝑚 𝑣𝑜𝑙𝑡𝑎𝑔𝑒 𝑤𝑒 𝑐𝑎𝑛 𝑚𝑒𝑎𝑠𝑢𝑟𝑒 𝑢𝑠𝑖ng 2𝑘Ω 𝑎𝑛𝑑 10kΩ 𝑟𝑒𝑠𝑖𝑠𝑡𝑜𝑟) 
-        For voltage calculation we have to assign a multiplier in the Arduino code. This is calculated by supplying different voltages to the circuit and reading the output using a multimeter. 
+# Factor Calculation 
+    For our demo we used R1: 10kΩ and R2: 2.2 kΩ (see image 8). Since a resistor value has variance of 5-10% it is advisable to measure the actual value using a multimeter. Actual resistor’s value for the above R1 and R2 were 9.85kΩ and 2.15kΩ respectively. Using the voltage divider calculator for output voltage of 3.3V we have an input voltage 18.41V. Hence, for the given R1 and R2 we can use these devises to sense voltages of up to 18.41V. For voltage calculation we have to assign a multiplier in the Arduino code. This is calculated by supplying different voltages to the circuit and reading the output using a multimeter. 
 
         For our test here are the input and output voltage 
 ##
@@ -215,16 +207,17 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
     Factor = 5.58 (this needs to be further adjusted because the circuit itself is not precise. One must run the code in Arduino IDE and compare the serial output with supplied input and lower or increase the factor value until the output is same as input). 
 
-    SSL Thumbprint: The JSON data can be posted to http also but since this is not secure we used https. We need to insert the value of the SSL thumbprint in the code otherwise the Arduino will be stuck at the ssl handshake stage. In Google chrome you can browse the URL and find the thumbprint by clicking on certificate button. Copy the value and paste it in the Arduino code in section 1.5. 
+# SSL Thumbprint
+The JSON data can be posted to http also but since this is not secure we used https. We need to insert the value of the SSL thumbprint in the code otherwise the Arduino will be stuck at the ssl handshake stage. In Google chrome you can browse the URL and find the thumbprint by clicking on certificate button. Copy the value and paste it in the Arduino code in section 1.5. 
 
 ##
 
-                            Figure 11https://res.cloudinary.com/caremsservices/image/upload/v1624008219/airjaldi/github/arudrino/table.png: SSL Thumbprint 
+                           (https://res.cloudinary.com/caremsservices/image/upload/v1624008219/airjaldi/github/arudrino/table.png: SSL Thumbprint)
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-10-Image-9.jpg "Input and voltage output")
         
         Eg: e9d4b50445712ba2976d475cd698c18171ea431b (thumbprint of random SSL certificate 
 
-        MondoDb: We used mongo atlas (free version) to store the data. The json snippet is given below: 
+ MondoDb: We used mongo atlas (free version) to store the data. The json snippet is given below: 
 
             { 
                 "_id": { 
