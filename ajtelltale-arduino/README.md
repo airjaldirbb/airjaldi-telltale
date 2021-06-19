@@ -212,7 +212,7 @@ The JSON data can be posted to http also but since this is not secure we used ht
 
 ##
 
-                           (https://res.cloudinary.com/caremsservices/image/upload/v1624008219/airjaldi/github/arudrino/table.png: SSL Thumbprint)
+                        
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-10-Image-9.jpg "Input and voltage output")
         
         Eg: e9d4b50445712ba2976d475cd698c18171ea431b (thumbprint of random SSL certificate 
