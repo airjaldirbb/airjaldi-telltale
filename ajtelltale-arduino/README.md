@@ -1,4 +1,4 @@
-## airjaldi_Arduino
+## AirJaldi Telltale Arduino
 
 
 
@@ -252,9 +252,6 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 ##
 
-1. Alerts are sent to various software suites (e.g. MS Teams, Bitrix) using Micorosoft Azure’s LogicApps.
-
-3. Objective 3: Develop an easy-to-use reporting and alert system with PC and mobile applications (Android) 
 
     General:
     
@@ -367,16 +364,3 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 # 4. Objective4: Measure and report on the cost-saving and improved uptime impact of the project
     As the system has been in operation for a short period, information on these indicators (also 
     mentioned in the “Project Evaluation” section) could not be provided at present. We expected to be able to report our findings here within 3-4 months. 
-
-# 5. Disseminate the project findings and share the systems design 
-    Dissemination will take place in two main ways. 
-    First, information - we will publicize the project and the products via our website, social networks (LinkeDin, FB, twitter, etc.) and will reach out to organizations and online platforms. 
-    Second, the TellTale products (code and manual Informing people about the project 
-    Second, making the product available – the manuals, codes, etc. are available at a repository we created on GitHub airjaldirbb/airjaldi-telllate · GitHub . In addition, the Android app is available on the Google Play store (its presence and overview may help other potential users learn about TellTale) 
-
-# 6. Create a paid support system for interested parties. 
-    AirJaldi is planning to create a Freemium support system for interested parties. The system will consist of the following : 
-
-- [Free service – a user can download the source files and manuals and implement the TellTale system at no cost. Beyond these resources, AirJaldi will offer general guidance and basic troubleshooting ](#)
-- [Setup – AirJaldi will help the user to install and configure the system to their needs, for an installation and set up fee ](#)
-- [Setup and management – AirJaldi will set up, install and provide ongoing support for running TellTale, for a one-time set up fee and additional monthly/quarterly/annual management and maintenance fee (AMC) ](#)
