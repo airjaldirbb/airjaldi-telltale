@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ## airjaldi_telltale
-=======
-# AirJaldi Telltale
->>>>>>> 3a9b24fe8feea7f3cdea48cbdb5247cd1c08a051
 
 # Measuring voltage using Arduino 
 
@@ -51,15 +47,15 @@
         Figure 6: PCB Prototype Assembly 
 
 
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-4-Image-5.jpg"PCB connected to Arduino")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-4-Image-5.jpg "PCB connected to Arduino")
          Figure 7: PCB connected to Arduino with pins connection A0 and GND 
 
 
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-5-Image-7.jpg"PCB connected to Arduino2")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-5-Image-7.jpg "PCB connected to Arduino2")
         Figure 8: Resistors R1 and R2 connected and plugs for battery input (green – sensing, blue - convertor) 
 
 
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992935/airjaldi/github/arudrino/Page-5-Image-6.jpg"Telltale Assembled Prototype")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992935/airjaldi/github/arudrino/Page-5-Image-6.jpg "Telltale Assembled Prototype")
         Figure 9: Telltale Assembled Prototype 
 
 ##
@@ -149,7 +145,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
        
         Figure 10: Data Collection process, Schematic flow 
 
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-8-Image-8.jpg"Schematic Flow")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-8-Image-8.jpg "Schematic Flow")
 
         <?php 
         require 'vendor/autoload.php'; 
@@ -209,7 +205,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
         For our test here are the input and output voltage 
         
             Table 2: Input and output voltages using multimeter (for factor calculation) 
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1624008219/airjaldi/github/arudrino/table.png"Input and voltage output")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1624008219/airjaldi/github/arudrino/table.png "Input and voltage output")
 
     Factor = 5.58 (this needs to be further adjusted because the circuit itself is not precise. One must run the code in Arduino IDE and compare the serial output with supplied input and lower or increase the factor value until the output is same as input). 
 
@@ -217,7 +213,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 
                 Figure 11: SSL Thumbprint 
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-10-Image-9.jpg"Input and voltage output")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-10-Image-9.jpg "Input and voltage output")
         Eg: e9d4b50445712ba2976d475cd698c18171ea431b (thumbprint of random SSL certificate 
 
         MondoDb: We used mongo atlas (free version) to store the data. The json snippet is given below: 
@@ -266,12 +262,12 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
             3.2  Web UI screen walk-through (Source: Airjaldi Telltale. Note: this URL will be replaced shortly with a Production environment – at the following URL: ajtelltale.com, expected launch by June 22) 
                                 Figure 13: Web Login Page 
 
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-13-Image-10.jpg"Login Page")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-13-Image-10.jpg "Login Page")
             Comments: users, with different permission levels, login to the UI from their computers or mobile phones. 
 
 
                                 Figure 14: Dashboard Page
-![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-14-Image-11.jpg"dashboard")
+![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-14-Image-11.jpg "dashboard")
 
 ##
         Narration: 
@@ -319,7 +315,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 ##
                         Figure 18: Report Generation Page  
-[alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992938/airjaldi/github/arudrino/Page-16-Image-16.jpg "Report Generation Page")
+[!alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992938/airjaldi/github/arudrino/Page-16-Image-16.jpg "Report Generation Page")
 
 #
         Narration:
@@ -328,7 +324,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 ##
                         Figure 19: Users Page
-[alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992938/airjaldi/github/arudrino/Page-17-Image-17.jpg "User Page")
+[!alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992938/airjaldi/github/arudrino/Page-17-Image-17.jpg "User Page")
 
 #
         Narration
@@ -337,7 +333,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 ##
                         Figure 20: Reports page 
-[alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-17-Image-18.jpg "Reports Page")
+[!alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-17-Image-18.jpg "Reports Page")
 
 #
         Narration: reports, for detailed reviews (.pdf) or analysis (.csv) can be generated and downloaded by users.
