@@ -78,67 +78,6 @@ const passport = require("passport");
       }
     }
   );
-  router.post(
-    '/register',
-    check('name', 'Name is required').notEmpty(),
-    check('email', 'Please include a valid email').isEmail(),
-    check(
-      'password',
-      'Please enter a password with 6 or more characters'
-    ).isLength({ min: 6 }),
-    async (req, res) => {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
-
-      const { name, email, password } = req.body;
-
-      try {
-        let user = await User.findOne({ email });
-
-        if (user) {
-          return res
-            .status(400)
-            .json({ errors: [{ msg: 'User already exists' }] });
-        }
-
-
-
-        user = new User({
-          name,
-          email,
-     role:"admin",
-          password
-        });
-
-        const salt = await bcrypt.genSalt(10);
-
-        user.password = await bcrypt.hash(password, salt);
-
-        await user.save();
-
-        const payload = {
-          user: {
-            id: user.id
-          }
-        };
-
-        jwt.sign(
-          payload,
-        keys.secretOrKey,
-          { expiresIn: '5 days' },
-          (err, token) => {
-            if (err) throw err;
-            res.json({ token });
-          }
-        );
-      } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
-      }
-    }
-  );
 
 
 
@@ -511,6 +450,43 @@ async (req, res) => {
 }
 )
 
+router.get('/UsersNetwork',
+
+async (req, res) => {
+
+
+
+
+  try {
+
+    const network   = await   Network.find({})
+
+
+   
+    
+   
+     
+
+    res.json(network)
+  
+    
+
+
+
+
+
+          
+
+
+
+
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+}
+)
+
 router.get('/allrelay',
 
 async (req, res) => {
@@ -565,9 +541,43 @@ router.post('/addUser',
 
 async (req, res) => {
 
+// console.log(req.body.network)
+const arr = []
+console.log(req.body.network.length)
+//  if(req.body.network.length === 0)
 
+req.body.network.forEach(element => {
+      //  console.log(element.relayNetwork)
+       
+       element.relayNetwork.forEach(element => {
+          const data = [element]
+           const   relayNetwork =  data.map(t => ({ relayName: t.relayNetworkName})) 
+            arr.push(...relayNetwork)
+          });
 
+   });
 
+   arr.push(...req.body.relayNetworks)
+
+  console.log(arr)
+  let newArray = [];
+  let uniqueObject = {};
+  for (let i in arr) {
+      
+    // Extract the title
+    objTitle = arr[i]['relayName'];
+
+    // Use the title as the index
+    uniqueObject[objTitle] = arr[i];
+}
+  
+// Loop to push unique object into array
+for (i in uniqueObject) {
+    newArray.push(uniqueObject[i]);
+}
+  
+// Display the unique objects
+console.log(newArray);
   try {
     const { email} = req.body;
     console.log(req.body)
@@ -580,8 +590,12 @@ async (req, res) => {
     }
     else {
   
+      const set = {
+          ...req.body , 
+          relayNetwork: newArray
+      }
  
-    const data = await RelayUser.create(req.body)
+    const data = await RelayUser.create(set)
  
     res.json(data)
 
@@ -1030,7 +1044,7 @@ router.get(
    
    
    
-        const sensors = await    Sensor.find({}).sort({reading_time:-1}).limit(2000)
+        const sensors = await    Sensor.find({}).sort({reading_time:-1})
    
         // const set = {
         //   sensors : sensors,
@@ -1175,9 +1189,7 @@ router.post(
       const payload = {
         user: {
           id: user.id,
-          name:user.name,
-          email:user.email,
-          avatar:user.avatar
+        
         }
       };
 
@@ -1193,6 +1205,7 @@ router.post(
           name:user.name,
           email:user.email,
           avatar: user.avatar
+         
         });
         }
       );
@@ -1518,5 +1531,19 @@ async  (req, res) => {
     
     
     });
+
+router.get('/auth', auth, async (req, res) => {
+  
+  try {
+    console.log(req.user)
+    const user = await RelayUser.findById(req.user.id).select('-password');
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+
 
 module.exports = router;

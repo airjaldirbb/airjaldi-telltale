@@ -31,17 +31,16 @@ mongoose
   )
   .then(() => 
   
-    
   
  
-  MongoClient.connect("", //paste your mongoDB URL
+  MongoClient.connect("",//DB URI goes here
   {
     useUnifiedTopology: true,
      useNewUrlParser: true,
   
   }).then((client) => {
-    const connect = client.db("") // Enter your database name here
-    console.log('sdds')
+    const connect = client.db("sensordata")
+    console.log('Connected to Databases Successfully')
     setInterval ( async  function   () {
    
      let netw = await  Network.find({})

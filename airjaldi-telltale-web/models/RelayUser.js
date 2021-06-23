@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const relayUserSchema = new Schema({
   avatar: {
     type: String,
-    required: true
+   
   },
   name: {
     type: String,
