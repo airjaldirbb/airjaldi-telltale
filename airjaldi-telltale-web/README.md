@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ## airjaldi_telltale
+=======
+# AirJaldi Telltale
+>>>>>>> 3a9b24fe8feea7f3cdea48cbdb5247cd1c08a051
 
 # Measuring voltage using Arduino 
 

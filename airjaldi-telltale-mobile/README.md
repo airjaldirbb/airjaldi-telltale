@@ -1,4 +1,4 @@
-# airjaldi_telltale
+# AirJaldi Telltale
 
 A new Flutter project.
 

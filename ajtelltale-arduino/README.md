@@ -1,43 +1,33 @@
-## airjaldi_Arduino
+## AirJaldi Telltale Arduino
 
 
 
 # Measuring voltage using Arduino 
 
-# 1.1 Board
+# Board
     Our search for an Arduino device that can connect to a voltage sensor and be able to send measurements to a remote database led us to the Arduino Wemos D1 R2 (picture below). We chose this specific board because it comes with built-in WiFi module and its form factor is large enough to accommodate a voltage divider and power supply. 
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992936/airjaldi/github/arudrino/Page-1-Image-1.jpg "Board1")
 
-# 1.2 Power Supply
-    Power Supply: Arduino can be powered on with a USB, 5V or 2.3V power supply. Since we have at least one 12V battery in all locations we used 12V to 5/3.3V step-down converter, with a form-factor that is small enough and readily available in market. 
+# Power Supply
+    Arduino can be powered on with a USB, 5V or 2.3V power supply. Since we have at least one 12V battery in all locations we used 12V to 5/3.3V step-down converter, with a form-factor that is small enough and readily available in market. 
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623994399/airjaldi/github/arudrino/thumbnail_aud_img.jpg "Power Supply")
                 
-                AC to 12 volt Power Supply
+                12 to 5 volts power supply
 
 
-# 1.2. Voltage Sensor
+# Voltage Sensor
         Arduinos have built-in voltage sensor which can measure voltages between 0-5 or 3.3 volts (depending upon the type). For reading voltages more that 0-5 or 0-3.3 we will have to make a voltage divider. There are various voltage dividers available in market but readily available one can measure voltage up to 25 volts. We need to measure voltage up to 60 volts or more so made our own. 
-
-        Voltage divider formula2: 
-        Where: 
-        Vout = output voltage Vin = source voltage R1 = first resistor 
         
-        R2 = second resistor 
-        ..................Column Break................𝑉𝑖𝑛 𝑋 𝑅2 
-
-        𝑉𝑜𝑢𝑡 = 𝑅1 + 𝑅2 
-
+        V(out) = V(input)xR2/(R1+R2)
 
 #
-        Figure 3: Scheme of Voltage Divider circuit
+        Figure 3: Schematic of Voltage Divider circuit
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992935/airjaldi/github/arudrino/Page-3-Image-2.jpg "Voltage Divider Circuit")
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1624001959/airjaldi/github/arudrino/diagram.jpg "Voltage Divider Circuit 2")
          
-         Figure 4. Voltage divider
-         schematic (using Arduino)
 
 # PCB (Printed Circuit Board) 
     for the circuit we used a We used prototype PCB, which has pre-drilled holes and can be easily cut to desired size.
@@ -206,16 +196,8 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 
 #
-# 1.4 Factor Calculation 
-    For our demo we used R1: 10kΩ and R2: 2.2 kΩ (see image 8). Since a resistor value has variance of 5-10% it is advisable to measure the actual value using a multimeter. Actual resistor’s value for the above R1 and R2 were 9.85kΩ and 2.15kΩ respectively. Using the voltage divider calculator for output voltage of 3.3V we have an input voltage 18.41V. Hence, for the given R1 and R2 we can use these devises to sense voltages of up to 18.41V. 
-
-    
-        ..................Column Break..................𝑉𝑖𝑛 𝑋 2.15 
-        3.3=9.85 + 2.15 
-        𝑉𝑖𝑛 = 18.41 
-        
-        (𝑚𝑎𝑥𝑖𝑚𝑢𝑚 𝑣𝑜𝑙𝑡𝑎𝑔𝑒 𝑤𝑒 𝑐𝑎𝑛 𝑚𝑒𝑎𝑠𝑢𝑟𝑒 𝑢𝑠𝑖ng 2𝑘Ω 𝑎𝑛𝑑 10kΩ 𝑟𝑒𝑠𝑖𝑠𝑡𝑜𝑟) 
-        For voltage calculation we have to assign a multiplier in the Arduino code. This is calculated by supplying different voltages to the circuit and reading the output using a multimeter. 
+# Factor Calculation 
+    For our demo we used R1: 10kΩ and R2: 2.2 kΩ (see image 8). Since a resistor value has variance of 5-10% it is advisable to measure the actual value using a multimeter. Actual resistor’s value for the above R1 and R2 were 9.85kΩ and 2.15kΩ respectively. Using the voltage divider calculator for output voltage of 3.3V we have an input voltage 18.41V. Hence, for the given R1 and R2 we can use these devises to sense voltages of up to 18.41V. For voltage calculation we have to assign a multiplier in the Arduino code. This is calculated by supplying different voltages to the circuit and reading the output using a multimeter. 
 
         For our test here are the input and output voltage 
 ##
@@ -225,16 +207,17 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
     Factor = 5.58 (this needs to be further adjusted because the circuit itself is not precise. One must run the code in Arduino IDE and compare the serial output with supplied input and lower or increase the factor value until the output is same as input). 
 
-    SSL Thumbprint: The JSON data can be posted to http also but since this is not secure we used https. We need to insert the value of the SSL thumbprint in the code otherwise the Arduino will be stuck at the ssl handshake stage. In Google chrome you can browse the URL and find the thumbprint by clicking on certificate button. Copy the value and paste it in the Arduino code in section 1.5. 
+# SSL Thumbprint
+The JSON data can be posted to http also but since this is not secure we used https. We need to insert the value of the SSL thumbprint in the code otherwise the Arduino will be stuck at the ssl handshake stage. In Google chrome you can browse the URL and find the thumbprint by clicking on certificate button. Copy the value and paste it in the Arduino code in section 1.5. 
 
 ##
 
-                            Figure 11https://res.cloudinary.com/caremsservices/image/upload/v1624008219/airjaldi/github/arudrino/table.png: SSL Thumbprint 
+                        
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992937/airjaldi/github/arudrino/Page-10-Image-9.jpg "Input and voltage output")
         
         Eg: e9d4b50445712ba2976d475cd698c18171ea431b (thumbprint of random SSL certificate 
 
-        MondoDb: We used mongo atlas (free version) to store the data. The json snippet is given below: 
+ MondoDb: We used mongo atlas (free version) to store the data. The json snippet is given below: 
 
             { 
                 "_id": { 
@@ -252,9 +235,6 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 ##
 
-1. Alerts are sent to various software suites (e.g. MS Teams, Bitrix) using Micorosoft Azure’s LogicApps.
-
-3. Objective 3: Develop an easy-to-use reporting and alert system with PC and mobile applications (Android) 
 
     General:
     
@@ -279,7 +259,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 
 
-###  3.2  Web UI screen walk-through (Source: Airjaldi Telltale. Note: this URL will be replaced shortly with a Production environment – at the following URL: ajtelltale.com, expected launch by June 22)
+###   Web UI screen walk-through (Source: Airjaldi Telltale. Note: this URL will be replaced shortly with a Production environment – at the following URL: ajtelltale.com, expected launch by June 22)
 ##             
                                 Figure 13: Web Login Page 
 
@@ -335,6 +315,7 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 
 ##
                         Figure 18: Report Generation Page  
+                        
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623992938/airjaldi/github/arudrino/Page-16-Image-16.jpg "Report Generation Page")
 
 
@@ -364,19 +345,3 @@ Http end point accepts data and saves the same in mongodb with timestamp when th
 # APK (Android Application Package) 
     In addition to the Web UI (computer and mobile) we have also developed an APK version, which provides the user with a stripped version of the UI, containing only alerts. 
 
-# 4. Objective4: Measure and report on the cost-saving and improved uptime impact of the project
-    As the system has been in operation for a short period, information on these indicators (also 
-    mentioned in the “Project Evaluation” section) could not be provided at present. We expected to be able to report our findings here within 3-4 months. 
-
-# 5. Disseminate the project findings and share the systems design 
-    Dissemination will take place in two main ways. 
-    First, information - we will publicize the project and the products via our website, social networks (LinkeDin, FB, twitter, etc.) and will reach out to organizations and online platforms. 
-    Second, the TellTale products (code and manual Informing people about the project 
-    Second, making the product available – the manuals, codes, etc. are available at a repository we created on GitHub airjaldirbb/airjaldi-telllate · GitHub . In addition, the Android app is available on the Google Play store (its presence and overview may help other potential users learn about TellTale) 
-
-# 6. Create a paid support system for interested parties. 
-    AirJaldi is planning to create a Freemium support system for interested parties. The system will consist of the following : 
-
-- [Free service – a user can download the source files and manuals and implement the TellTale system at no cost. Beyond these resources, AirJaldi will offer general guidance and basic troubleshooting ](#)
-- [Setup – AirJaldi will help the user to install and configure the system to their needs, for an installation and set up fee ](#)
-- [Setup and management – AirJaldi will set up, install and provide ongoing support for running TellTale, for a one-time set up fee and additional monthly/quarterly/annual management and maintenance fee (AMC) ](#)
