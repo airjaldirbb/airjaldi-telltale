@@ -115,6 +115,10 @@ Here's what you can expect from AirJaldi Telltale:
         password:"*****" 
 
         }; 
+        
+        Step 7. Add database connection URI in line 36
+        
+        Step 8. In line 55 change the database name where sensors are sending data
 
 
 ## How it works
