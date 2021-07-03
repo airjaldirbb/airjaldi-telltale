@@ -11,7 +11,7 @@
  AirJaldi telltale is for monitoring power parameters in network relays. With this application, network companies can monitor various network power parameters with intuitive front-end showing the data reported the sensors and make appropriate decisions. 
 
 
-  ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623924599/airjaldi/github/blob/Page-2-Image-3.jpg "Home Page"){:height="50%" width="50%"}
+  ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623924599/airjaldi/github/blob/Page-2-Image-3.jpgv=4&s=200 "Home Page")
   Latest release: v1.0, June 17, 2021 
 
   ## Menu
