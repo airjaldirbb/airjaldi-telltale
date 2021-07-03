@@ -116,9 +116,9 @@ Here's what you can expect from AirJaldi Telltale:
 
         }; 
         
-        Step 7. Add database connection URI in line 36
+        Step 7. Add database connection URI in line 36 in server.js file
         
-        Step 8. In line 55 change the database name where sensors are sending data
+        Step 8. In line 55 of server.js change the database name where sensors are sending data
 
 
 ## How it works
