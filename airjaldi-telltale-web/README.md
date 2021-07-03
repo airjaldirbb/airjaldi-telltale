@@ -1,4 +1,4 @@
-# airjaldi_telltale
+# AirJaldi Telltale
 
 ![alt text](https://res.cloudinary.com/caremsservices/image/upload/v1623924598/airjaldi/github/blob/Page-1-Image-1.jpg "Banner1")
 
